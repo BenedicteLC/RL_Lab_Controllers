@@ -1,0 +1,19 @@
+<launch>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+
+    <!-- start gazebo with an empty plane -->
+    <param name="/use_sim_time" value="true" />
+
+    <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find turtlebot_gazebo)/worlds/1box.world" respawn="false" output="screen"/>
+
+    <include file="$(find turtlebot_gazebo)/launch/robot.launch"/>
+
+    <node pkg="map_bumper" type="bumper" respawn="false" name="bumper" output="screen"/>   
+
+    <!-- start gui -->
+    <group if="$(arg gui)">
+        <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
+    </group> 
+
+</launch>

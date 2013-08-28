@@ -1,0 +1,17 @@
+<package>
+  <description brief="rl_lab_controllers">
+     rl_lab_controllers
+  </description>
+  <author>Benedicte LC</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>NONE</url>
+
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="turtlebot_node"/>
+  <depend package="geometry_msgs"/>
+</package>
+
+
